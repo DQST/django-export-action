@@ -1,7 +1,10 @@
 import uuid
 from django.contrib import admin
 from django.contrib.contenttypes.models import ContentType
-from django.urls import reverse
+try:
+    from django.urls import reverse
+except ImportError:
+    from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
 from django.utils.translation import ugettext_lazy as _
 
